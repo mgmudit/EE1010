@@ -1,0 +1,40 @@
+REFERENCES
+
+1. Arduino Digital Clock Project Manual.
+   The report identifies this as the project manual used for the Arduino
+   digital clock. Fill in the exact title, author/publisher, year, and
+   page number from the copy actually consulted.
+
+2. SN74LS47N BCD-to-Seven-Segment Decoder / Driver Data Sheet.
+   Component manufacturer data sheet. Record the exact revision consulted
+   during the project.
+
+3. Arduino.
+   Arduino Documentation.
+   https://docs.arduino.cc/
+
+4. Arduino.
+   millis() Language Reference.
+   https://docs.arduino.cc/language-reference/en/functions/time/millis/
+
+5. Paul Stoffregen.
+   TimerOne Library for Arduino.
+   https://github.com/PaulStoffregen/TimerOne
+
+6. OLED display manufacturer.
+   SSD1306 Datasheet 
+   https://e2e.ti.com/cfs-file/__key/communityserver-discussions-components-files/791/SSD1306-Datasheet-for-096-OLED-_2800_1_2900_.pdf
+
+7. OpenAI.
+   ChatGPT, generative AI tool used for language refinement, structural
+   suggestions, and presentation review.
+   https://chatgpt.com/
+   
+8. K-Maps Taught by our seniors(TAs) and then we took the help of chatgpt to learn and create the tables
+
+9. The Latex Text is based on our words but is put into programming by chatgpt
+
+10. The Latex PDF Was generated using Overleaf Online Tex Editor
+
+11. The Whole Code Was Vibe Coded and the boolean logic was used from Dr. GVV Sir's Code:
+https://github.com/gadepall/clock/blob/main/codes/code.cpp
