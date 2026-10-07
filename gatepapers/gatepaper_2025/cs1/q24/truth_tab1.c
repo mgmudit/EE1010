@@ -2,34 +2,38 @@
 //Date: 07/10/2026
 #include <stdio.h>
 
-// Converts i into 3-bit binary and stores the bits in A, B and C
-void printBinary(int n, int *A, int *B, int *C)
+// Convert number into 3-bit binary
+void printBinary(int n)
 {
-    *A = (n >> 2) & 1;   // Get the leftmost bit
-    *B = (n >> 1) & 1;   // Get the middle bit
-    *C = n & 1;          // Get the rightmost bit
+    int i;
 
-    printf("%d%d%d", *A, *B, *C);
+    for (i = 2; i >= 0; i--)
+        printf("%d", (n >> i) & 1);
+}
+
+// Generate all possible combinations
+void generateTruthTable()
+{
+    int i, X;
+
+    for (i = 0; i < 8; i++)
+    {
+        // X = AB + AC + BC
+        X = (((i >> 2) & 1) & ((i >> 1) & 1))
+          | (((i >> 2) & 1) & (i & 1))
+          | (((i >> 1) & 1) & (i & 1));
+
+        printBinary(i);
+        printf(" | %d\n", X);
+    }
 }
 
 int main()
 {
-    int i, A, B, C, X;
-
     printf("A B C | X\n");
     printf("--------\n");
 
-    // Generate all numbers from 0 to 7
-    for (i = 0; i < 8; i++)
-    {
-        // Convert i into binary and generate A, B and C
-        printBinary(i, &A, &B, &C);
-
-        // Boolean function: X = AB + AC + BC
-        X = (A & B) | (A & C) | (B & C);
-
-        printf(" | %d\n", X);
-    }
+    generateTruthTable();
 
     return 0;
 }
