@@ -11,7 +11,7 @@ void int_to_binary(int num, int bit[])
         bit[3 - i] = (num >> i) & 1;
 }
 
-// Generate the complete truth table
+// Generate the truth table
 void truth_table()
 {
     int i, bit[4], F;
@@ -20,10 +20,14 @@ void truth_table()
     {
         int_to_binary(i, bit);
 
-        // F = (0, 2, 4, 8, 10, 11, 12)
-        F = (i == 0) || (i == 2) || (i == 4) ||
-            (i == 8) || (i == 10) || (i == 11) ||
-            (i == 12);
+        // F = (0,2,4,8,10,11,12)
+        F = ((!bit[0] && !bit[1] && !bit[2] && !bit[3]) ||
+             (!bit[0] && !bit[1] && bit[2] && !bit[3]) ||
+             (!bit[0] && bit[1] && !bit[2] && !bit[3]) ||
+             (bit[0] && !bit[1] && !bit[2] && !bit[3]) ||
+             (bit[0] && !bit[1] && bit[2] && !bit[3]) ||
+             (bit[0] && !bit[1] && bit[2] && bit[3]) ||
+             (bit[0] && bit[1] && !bit[2] && !bit[3]));
 
         printf("%d  %d  %d  %d  |  %d\n",
                bit[0], bit[1], bit[2], bit[3], F);
