@@ -4,28 +4,22 @@
 
 int main()
 {
-    int A, B, C, X;
+    int i, A, B, C, X;
 
-    // Print the headings of the truth table
     printf("A B C | X\n");
     printf("--------\n");
 
-    // Generate all possible values of A, B and C
-    for (A = 0; A <= 1; A++)
+    for (i = 0; i < 8; i++)
     {
-        for (B = 0; B <= 1; B++)
-        {
-            for (C = 0; C <= 1; C++)
-            {
-                // X = 1 when at least two of A, B and C are 1
-                // &  -> bitwise AND
-                // |  -> bitwise OR
-                X = (A & B) | (B & C) | (A & C);
+        // Extract the 3 bits of i
+        A = (i >> 2) & 1;
+        B = (i >> 1) & 1;
+        C = i & 1;
 
-                // Print the current combination and its output
-                printf("%d %d %d | %d\n", A, B, C, X);
-            }
-        }
+        // Majority function: X = AB + AC + BC
+        X = (A & B) | (A & C) | (B & C);
+
+        printf("%d %d %d | %d\n", A, B, C, X);
     }
 
     return 0;
