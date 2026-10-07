@@ -13,7 +13,7 @@ int uniform()
     return rand() % (MAX + 1);
 }
 
-// Fill the array with random values
+// Fill A with random values
 void generate(int A[])
 {
     int i;
@@ -23,7 +23,7 @@ void generate(int A[])
 }
 
 // Function given in the question
-// It sorts the array using adjacent swaps
+// Sorts the array using adjacent swaps
 // and returns the total number of swaps
 int fun(int A[])
 {
@@ -54,19 +54,24 @@ int main()
     int A[N];
     int i, swaps;
 
-    // Different random values each time the program runs
+    // Start the random number generator
     srand(time(NULL));
 
-    // Generate the random array
+    // Generate the input array
     generate(A);
 
-    printf("Random array:\n");
+    printf("Input A:\n");
 
     for (i = 0; i < N; i++)
         printf("%d ", A[i]);
 
-    // Pass the generated array to the given function
+    // Give the generated A to the function
     swaps = fun(A);
+
+    printf("\n\nA after fun():\n");
+
+    for (i = 0; i < N; i++)
+        printf("%d ", A[i]);
 
     printf("\n\nNumber of swaps = %d\n", swaps);
 
