@@ -35,4 +35,4 @@ plt.savefig("piecewise_function.pdf")
 plt.close()
 
 # Open the PDF
-subprocess.run(["xdg-open", "piecewise_function.pdf"])
+subprocess.run(["termux-open", "piecewise_function.pdf"])
