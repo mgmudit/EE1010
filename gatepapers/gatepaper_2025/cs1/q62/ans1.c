@@ -6,16 +6,12 @@
 
 int main()
 {
-    avyuh *L1, *L2;
+    avyuh *L;
 
-    L1 = loadList("L1.dat", 1, 9);
-    L2 = loadList("L2.dat", 1, 7);
+    L = loadList("lists.dat", 2, 9);
 
-    printf("L1 = ");
-    printList(L1);
-
-    printf("L2 = ");
-    printList(L2);
+    printf("The two lists are:\n");
+    printList(L);
 
     return 0;
 }
